@@ -11,7 +11,8 @@ COPY . .
 RUN npm run build
 
 # Expose the port TanStack Start serves on
-EXPOSE 3000
+EXPOSE 8080
 
-# Start the built server
+# Start the built server (srvx reads the PORT env var)
+ENV PORT=8080
 CMD ["node", "dist/server/server.js"]
